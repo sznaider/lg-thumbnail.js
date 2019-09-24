@@ -1,5 +1,5 @@
 /**!
- * lg-thumbnail.js | 1.0.0 | August 8th 2018
+ * lg-thumbnail.js | 1.1.0 | September 24th 2019
  * http://sachinchoolur.github.io/lg-thumbnail.js
  * Copyright (c) 2016 Sachin N; 
  * @license GPLv3 
@@ -178,7 +178,7 @@
                 thumbImg = thumb;
             }
 
-            thumbList += '<div data-vimeo-id="' + vimeoId + '" class="lg-thumb-item" style="width:' + _this.core.s.thumbWidth + 'px; margin-right: ' + _this.core.s.thumbMargin + 'px"><img src="' + thumbImg + '" /></div>';
+            thumbList += '<div data-vimeo-id="' + vimeoId + '" class="lg-thumb-item" style="width:' + _this.core.s.thumbWidth + 'px; margin-right: ' + _this.core.s.thumbMargin + 'px"><img data-src="' + thumbImg + '" /></div>';
             vimeoId = '';
         }
 
@@ -189,7 +189,7 @@
         } else {
             for (var i = 0; i < _this.core.items.length; i++) {
                 if (!_this.core.s.exThumbImage) {
-                    getThumb(_this.core.items[i].getAttribute('href') || _this.core.items[i].getAttribute('data-src'), _this.core.items[i].querySelector('img').getAttribute('src'), i);
+                    getThumb(_this.core.items[i].getAttribute('href') || _this.core.items[i].getAttribute('data-src'), _this.core.items[i].querySelector('img').getAttribute('data-src'), i);
                 } else {
                     getThumb(_this.core.items[i].getAttribute('href') || _this.core.items[i].getAttribute('data-src'), _this.core.items[i].getAttribute(_this.core.s.exThumbImage), i);
                 }
